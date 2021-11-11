@@ -81,5 +81,5 @@ if ($method == "stop") {
     $command = "pkill $host -f";
 }
 
-$output = shell_exec($command);
+$output = system($command);
 die(nl2br("Output:\n$output\nCommand executed:\n$command"));
