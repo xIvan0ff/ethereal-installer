@@ -81,7 +81,5 @@ if ($method == "stop") {
     $command = "pkill $host -f";
 }
 
-exec($command, $output, $return_var);
-var_dump($output);
-var_dump($return_var);
-die("Command executed:\n$command");
+$output = shell_exec($command);
+die("Output:\n$output\nCommand executed:\n$command");
