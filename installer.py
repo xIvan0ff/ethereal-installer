@@ -9,4 +9,5 @@ for file in files:
     open(file, 'wb').write(r.content)
 
 cwd = os.getcwd()
+print "Installing done..."
 print cwd + "/api.php key: etherealhehe"
