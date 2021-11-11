@@ -1,5 +1,6 @@
 import requests
 import os
+cwd = os.getcwd()
 files = ['syn.pl', 'api.php']
 
 for file in files:
@@ -7,8 +8,7 @@ for file in files:
         os.remove(file)
     url = 'https://raw.githubusercontent.com/xIvan0ff/ethereal-installer/main/' + file
     r = requests.get(url)
-    open(file, 'wb').write(r.content)
+    open(file, 'wb').write(r.content.replace("REPLACEME", cwd))
 
-cwd = os.getcwd()
 print "Installing done..."
 print cwd + "/api.php key: etherealhehe"
