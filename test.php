@@ -1,3 +1,5 @@
 <?php
-$output = shell_exec("whoami");
+$output = null;
+$retval = null;
+exec("whoami", $ouput, $result_code);
 die($output);
