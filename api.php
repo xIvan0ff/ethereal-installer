@@ -82,4 +82,4 @@ if ($method == "stop") {
 }
 
 $output = shell_exec($command);
-die("Output:\n$output\nCommand executed:\n$command");
+die(nl2br("Output:\n$output\nCommand executed:\n$command"));
