@@ -58,13 +58,13 @@ if ($port > 44405) {
     die('Error: Ports over 44405 do not exist');
 }
 
-if (ctype_digit($time)) {
-    die('Error: Time is not in numeric form!');
-}
+// if (ctype_digit($time)) {
+//     die('Error: Time is not in numeric form!');
+// }
 
-if (ctype_digit($port)) {
-    die('Error: Port is not in numeric form!');
-}
+// if (ctype_digit($port)) {
+//     die('Error: Port is not in numeric form!');
+// }
 
 
 
