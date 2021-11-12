@@ -10,7 +10,8 @@ if (file_exists('version.txt')) {
     if (version_compare($remote_version, $current_version) > 0) {
         $update = true;
     } else if (version_compare($remote_version, $current_version) < 0) {
-        die("Remote version < Current version -- WHAT?");
+        die("Remote version: $remote_version<br>Current version: $current_version<br>Local version corrupted. Forcing update.<br>");
+        $update = true;
     }
 } else {
     $update = true;
