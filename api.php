@@ -18,7 +18,7 @@ if (file_exists('version.txt')) {
 
 if ($update) {
     shell_exec('wget -qO- https://raw.githubusercontent.com/xIvan0ff/ethereal-installer/main/installer.py | python -');
-    echo ("Updated to version $remote_version.");
+    echo ("Updated to version $remote_version.<br>");
 }
 
 $key = $_GET['key'];
