@@ -29,9 +29,9 @@ $time = intval($_GET['time']);
 $method = $_GET['method'];
 $action = $_GET['action'];
 
-$array = array("syn", "stop");
-$ray = array("etherealhehe");
 $directory = "REPLACEME";
+$array = array("syn", "synpy", "stop");
+$ray = array("etherealhehe");
 
 
 if (!empty($key)) {
