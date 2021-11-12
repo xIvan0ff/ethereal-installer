@@ -7,9 +7,9 @@ $update = false;
 $remote_version = file_get_contents('https://raw.githubusercontent.com/xIvan0ff/ethereal-installer/main/version.txt');
 if (file_exists('version.txt')) {
     $current_version = file_get_contents('version.txt');
-    if (version_compare($remote_version, $current_version) >= 0) {
+    if (version_compare($remote_version, $current_version) > 0) {
         $update = true;
-    } else {
+    } else if (version_compare($remote_version, $current_version) < 0) {
         die("Remote version < Current version -- WHAT?");
     }
 } else {
