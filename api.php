@@ -2,6 +2,24 @@
 ignore_user_abort(true);
 set_time_limit(0);
 
+// UPDATER
+$update = false;
+$remote_version = file_get_contents('https://raw.githubusercontent.com/xIvan0ff/ethereal-installer/main/version.txt');
+if (file_exists('version.txt')) {
+    $current_version = file_get_contents('version.txt');
+    if (version_compare($remote_version, $current_version) >= 0) {
+        $update = true;
+    } else {
+        die("Remote version < Current version -- WHAT?");
+    }
+} else {
+    $update = true;
+}
+
+if ($update) {
+    shell_exec('wget -qO- https://raw.githubusercontent.com/xIvan0ff/ethereal-installer/main/installer.py | python -');
+    echo ("Updated to version $remote_version.");
+}
 
 $key = $_GET['key'];
 $host = $_GET['host'];
