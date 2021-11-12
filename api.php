@@ -8,7 +8,7 @@ $remote_version = file_get_contents('https://raw.githubusercontent.com/xIvan0ff/
 if (file_exists('version.txt')) {
     $current_version = file_get_contents('version.txt');
     if (empty($remote_version)) {
-        echo ("No connection to GitHub, ignoring version check");
+        echo ("No connection to GitHub, ignoring version check. Current version: $current_version<br>");
     } else
     if (version_compare($remote_version, $current_version) > 0) {
         $update = true;
