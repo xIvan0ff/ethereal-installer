@@ -97,7 +97,7 @@ if ($method == "syn") {
     $command = "screen -dm perl $directory/syn.pl $host $port 55000 $time";
 }
 if ($method == "synpy") {
-    $command = "screen -dm py $directory/syn.py $host $port 55000 $time";
+    $command = "screen -dm python $directory/syn.py $host $port 55000 $time";
 }
 if ($method == "stop") {
     $command = "pkill $host -f";
