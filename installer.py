@@ -1,7 +1,7 @@
 import requests
 import os
 cwd = os.getcwd()
-files = ['syn.pl', 'api.php', 'test.php', 'syn.py']
+files = ['syn.pl', 'api.php', 'test.php', 'syn.py', 'version.txt']
 
 for file in files:
     if os.path.isfile(file):
