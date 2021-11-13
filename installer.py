@@ -10,15 +10,11 @@ for file in files:
     url = 'https://raw.githubusercontent.com/xIvan0ff/ethereal-installer/main/' + file
     urllib.urlretrieve(url, file)
     # open(file, 'wb').write(r.content.replace("REPLACEME", cwd))
-    with open(file, 'r') as file:
-        filedata = file.read()
-
-        # Replace the target string
+    with open(file, 'r') as file_object:
+        filedata = file_object.read()
         filedata = filedata.replace("REPLACEME", cwd)
-
-        # Write the file out again
-    with open(file, 'w') as file:
-        file.write(filedata)
+    with open(file, 'w') as file_object:
+        file_object.write(filedata)
 
 print "Installing done..."
 print cwd + "/api.php key: etherealhehe"
