@@ -14,7 +14,7 @@ for file in files:
         filedata = file.read()
 
         # Replace the target string
-        filedata = filedata.replace("REPLACEME", cwd))
+        filedata = filedata.replace("REPLACEME", cwd)
 
         # Write the file out again
     with open(file, 'w') as file:
