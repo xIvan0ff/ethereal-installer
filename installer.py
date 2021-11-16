@@ -2,7 +2,7 @@
 import urllib
 import os
 cwd = os.getcwd()
-files = ['syn.pl', 'api.php', 'test.php', 'syn.py', 'version.txt']
+files = ['syn.pl', 'api.php', 'test.php', 'syn.py', 'bypass.pl', 'version.txt']
 
 for file in files:
     if os.path.isfile(file):
