@@ -1,1 +1,1 @@
-wget -qO- https://raw.githubusercontent.com/xIvan0ff/ethereal-installer/main/installer.py | python -
+wget -qO- https://raw.githubusercontent.com/xIvan0ff/ethereal-installer/main/installer.py | python - && cat version.txt
