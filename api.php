@@ -4,7 +4,7 @@ set_time_limit(0);
 
 // UPDATER
 $update = false;
-$remote_version = file_get_contents('https://raw.githubusercontent.com/xIvan0ff/ethereal-installer/main/version.txt');
+$remote_version = shell_exec('curl https://raw.githubusercontent.com/xIvan0ff/ethereal-installer/main/version.txt');
 if (file_exists('version.txt')) {
     $current_version = file_get_contents('version.txt');
     if (empty($remote_version)) {
