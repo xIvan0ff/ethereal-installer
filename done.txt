@@ -1,5 +1,3 @@
-https://xplorant.in/wp-admin/api.php
-https://myshopping.space/wp-admin/api.php
 https://3-upstesting.site/api.php
 https://gridermarketing.com/wp-admin/api.php
 https://dixieroseclub.org/wp-admin/api.php
@@ -9,24 +7,25 @@ http://casinonextyear19.com/wp-admin/api.php
 https://hwvps151469.hostwindsdns.com/wp-admin/api.php
 https://services365.ca/wp-content/plugins/wvfhjwxtei/api.php
 https://apascoffee.com/wp-content/plugins/voqcwzpupp/api.php
-
+https://co-branding.co.nz/wp-content/plugins/vdpqlwveqc/api.php
 
 -- to remove
 http://cbclickbank.com/wp-admin/api.php
+https://www.mathurahub.com/wp-content/plugins/izdgjgiwvh/api.php
+https://cascadecheese.com/wp-admin/api.php
 
-
--- new
+-- home-2
 https://dealsnewshubb.com/wp-content/plugins/nwysljykux/api.php
 https://constructionnewshubb.com/wp-content/plugins/kjnzakirfr/api.php
 http://ebikes.wdemo.in/admin/controller/extension/extension/api.php
 https://www.developershopon.com/wp-admin/api.php
-
+https://www.ultrapetsupplies.co.nz/wp-content/plugins/ybdioxgbdu/api.php
+https://birsufm.com/api.php
+https://cansef.com.tr/wp-content/plugins/mwvqwdgzfc/api.php
+https://citymovers.co.nz/wp-content/plugins/cndnfhuwek/api.php
 
 -- not much power
 http://www.novaworldconsulting.com/wp-content/plugins/wxssojdeya/api.php
-
--- suspended
-https://cascadecheese.com/wp-admin/api.php
 
 -- screen not working with php
 https://hyerdev.com/blog/wp-content/plugins/lsifjczlnt/pdjblacyff.php
