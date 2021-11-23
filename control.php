@@ -143,19 +143,21 @@ foreach ($servers as $i => $url) {
     }
 }
 
-$current_version = file_get_contents('version.txt');
 
-if ($update == "update") {
-    $w = 0;
+
+
+if ($method == "update") {
+    echo "Waiting 15 seconds...<br>";
+    sleep(15);
+    $current_version = file_get_contents('version.txt');
     foreach ($servers as $i => $url) {
-        $url = str_replace($url, "api.php", "version.txt");
+        $url = str_replace("api.php", "version.txt", $url);
         $cmd = "curl -X GET \"$url\"";
         $a = shell_exec($cmd);
-        if ($current_version != $a) {
+        if ($current_version == $a) {
             echo "<a style='color:green'>$url: $a</a><br>";
         } else {
             echo "<a style='color:red'>$url: $a</a><br>";
         }
     }
-    $serlen = count($servers);
 }
