@@ -30,7 +30,7 @@ $host = $_GET['host'];
 $port = intval($_GET['port']);
 $time = intval($_GET['time']);
 $method = $_GET['method'];
-$action = $_GET['action'];
+// $action = $_GET['action'];
 $debug = isset($_GET['debug']) ? 1 : 0;
 
 $directory = "REPLACEME";

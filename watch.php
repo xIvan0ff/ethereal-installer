@@ -45,7 +45,7 @@ $webhookurl = "https://discord.com/api/webhooks/912653409449041960/vwHKE0wU7HSJJ
 $timestamp = date("c", strtotime("now"));
 
 $checkhosturl = "https://check-host.net/ip-info?host=$ip";
-
+$version = file_get_contents('version.txt');
 $json_data = '
     {
     "content": null,
@@ -68,7 +68,7 @@ $json_data = '
             }
         ],
         "author": {
-          "name": "HRISLog v1.0"
+          "name": "HRISLog v' . $version . '"
         }
       }
     ]
