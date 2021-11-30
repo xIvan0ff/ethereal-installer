@@ -99,6 +99,13 @@ if ($method == "bypass") {
     $command = "screen -dm perl $directory/bypass.pl $host $time";
 }
 if ($method == "http") {
+    if (substr($host, 0, 4) !== "http") {
+        if ($port === 443) {
+            $host = "https://$host";
+        } else {
+            $host = "http://$host";
+        }
+    }
     $command = "screen -dm perl $directory/http.pl $host $port 50 500 $time";
 }
 if ($method == "stop") {

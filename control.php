@@ -8,7 +8,6 @@ $free = array(
     "https://herbovet.net/wp-content/plugins/vusjnauvpx/api.php",
     "https://media.ind.in/wp-content/api.php",
     "https://hisab.tspltest.com/api.php",
-    "http://cptatavasco.com.mx/wp-backup/api.php"
 );
 
 $paid = array(
