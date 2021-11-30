@@ -147,7 +147,7 @@ if ($method == "check") {
 }
 
 foreach ($servers as $i => $url) {
-    $params = "?host=$host&port=$port&time=$time&key=$key&method=$method";
+    $params = "?host=$host&port=$port&key=$key&method=$method&time=$time";
     $to_req =  $url . $params;
     $cmd = "curl -X GET \"$to_req\"";
     if ($debug) {
