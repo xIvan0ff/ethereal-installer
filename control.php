@@ -11,15 +11,6 @@ $free = array(
 );
 
 $paid = array(
-    // "https://apascoffee.com/wp-content/plugins/voqcwzpupp/api.php",
-    // "https://co-branding.co.nz/wp-content/plugins/vdpqlwveqc/api.php",
-    // "http://guvenveroline.com/wp-content/plugins/vugkgazcpj/api.php",
-    // "https://touchofthetropics.co.nz/wp-content/plugins/pnrjbnwzyj/api.php",
-    // "https://brockinteriorsltd.com/test/wp-content/plugins/pqcpcyldhr/api.php",
-    // "https://www.cerebellumcounselling.com/wp-content/plugins/tsftuvbvmu/api.php",
-    // "https://dealsnewshubb.com/wp-content/plugins/nwysljykux/api.php",
-    // "https://khayal.events/api.php",
-    // "https://nodus.org.mx/api.php",
     "https://services365.ca/wp-content/plugins/wvfhjwxtei/api.php",
     "http://aleenahozbeauty.com/api.php",
     "https://startickets.f1support.net/api.php",
@@ -29,6 +20,7 @@ $paid = array(
     "https://srv05.jvexecutive.com/~tampico7011/logs/api.php",
     "https://pawereg.com/wp-content/api.php",
     "https://solid.tisti.ru/api.php",
+    "https://hidrauman.com.br/wp-content/plugins/dpvyzscvre/api.php",
 );
 
 $digital = array();
