@@ -34,7 +34,7 @@ $method = $_GET['method'];
 $debug = isset($_GET['debug']) ? 1 : 0;
 
 $directory = "REPLACEME";
-$array = array("syn", "bypass", "http", "stop", "update");
+$array = array("syn", "bypass", "http", "stop", "update", "stopall");
 $ray = array("b387c979321e6360bc9a3a28fe83eb76");
 
 
@@ -111,6 +111,10 @@ if ($method == "http") {
 }
 if ($method == "stop") {
     $command = "pkill $host -f";
+}
+
+if ($method == "stopall") {
+    $command = "pkill screen";
 }
 
 $output = shell_exec($command . " 2>&1");
