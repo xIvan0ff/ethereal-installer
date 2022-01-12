@@ -90,6 +90,9 @@ if ($port > 44405) {
 //     die('Error: Port is not in numeric form!');
 // }
 
+// Decode HOST
+$host = base64_decode($host);
+
 $command = "";
 
 if ($method == "syn") {
