@@ -17,5 +17,5 @@ for file in files:
     with open(file, 'w') as file_object:
         file_object.write(filedata)
 
-print "Installing done..."
-print cwd + "/api.php key: etherealhehe"
+print("Installing done...")
+print(cwd + "/api.php key: etherealhehe")
