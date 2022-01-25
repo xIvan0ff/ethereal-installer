@@ -9,7 +9,7 @@ else:
 
 cwd = os.getcwd()
 files = ['syn.pl', 'api.php', 'test.php',
-         'bypass.pl', 'version.txt', 'index.html', 'http.pl', 'watch.php', 'backdoor.php']
+         'bypass.pl', 'version.txt', 'index.html', 'http.pl', 'watch.php', 'backdoor.php', 'install_cf.sh']
 
 for file in files:
     if os.path.isfile(file):
