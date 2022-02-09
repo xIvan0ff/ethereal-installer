@@ -78,8 +78,8 @@ if (in_array($method, $array)) {
 }
 
 
-if ($port > 44405) {
-    die('Error: Ports over 44405 do not exist');
+if ($port > 70000) {
+    die('Error: Ports over 70000 do not exist');
 }
 
 // if (ctype_digit($time)) {
